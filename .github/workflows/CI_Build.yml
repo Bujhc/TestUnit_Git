@@ -30,7 +30,7 @@ jobs:
       - name: Generate Surefire HTML report
         run: mvn surefire-report:report
       - name: Upload test report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: surefire-report
           path: target/site/surefire-report.html
