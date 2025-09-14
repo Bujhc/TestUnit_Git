@@ -27,3 +27,17 @@ jobs:
           distribution: 'temurin'
       - name: Run JUnit tests
         run: mvn --batch-mode --update-snapshots test
+      - name: Generate Surefire HTML report
+        run: mvn surefire-report:report
+      - name: Upload test report
+        uses: actions/upload-artifact@v3
+        with:
+          name: surefire-report
+          path: target/site/surefire-report.html
+      - name: Publish JUnit results
+        uses: dorny/test-reporter@v1
+        with:
+          name: JUnit Tests
+          path: target/surefire-reports/*.xml
+          reporter: junit
+
