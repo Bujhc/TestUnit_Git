@@ -26,20 +26,5 @@ jobs:
           java-version: '22'
           distribution: 'temurin'
       - name: Run JUnit tests
-        run: mvn --batch-mode --update-snapshots test -X
-      - name: Generate Surefire HTML report
-        run: mvn surefire-report:report
-      - name: Upload test report
-        uses: actions/upload-artifact@v4
-        with:
-          name: surefire-report
-          path: target/site/surefire-report.html
-      - name: Publish JUnit results
-        uses: dorny/test-reporter@v1
-        if: success() || failure ()
-        with:
-          name: JUnit Tests
-          path: target/surefire-reports/*.xml
-          reporter: junit
-          fail-on-errror: true
+        run: mvn test
 
