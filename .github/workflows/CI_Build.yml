@@ -18,11 +18,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Run JavaFX tests
-   
-        uses: erwanclx/maven-javafx-testing@v1
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v4
         with:
           java-version: '22'
-          project-dir: './'
-          maven-args: 'verify -DskipTests=false'
+          distribution: 'temurin'
+      - name: Run JUnit tests
+        run: mvn --batch-mode --update-snapshots test
