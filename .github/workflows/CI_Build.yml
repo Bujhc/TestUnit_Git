@@ -15,9 +15,10 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
+  job-1:
+   name: Test Pass
+   runs-on: ubuntu-latest
+   steps:
       - uses: actions/checkout@v5
         with:
           submodules: false
@@ -27,4 +28,13 @@ jobs:
           distribution: 'temurin'
       - name: Run JUnit tests
         run: mvn -B -V clean test
+  
+  job-2:
+     name: Azure connect
+     runs-on: ubuntu-latest
+     needs:
+       - job-1
+     steps:
+      - name: Otput for job 2
+        run: echo "passed test and ready to connect with Azure"
 
