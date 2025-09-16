@@ -1,5 +1,5 @@
 
-class Solution {
+class Twosum {
     
 	public int[] twoSum(int[] nums, int target) {
 

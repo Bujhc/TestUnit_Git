@@ -6,7 +6,7 @@ public class TwoSumUnit {
 
 	@Test
 	public void test() {
-		UnitTesting obj1 = new UnitTesting();
+		Twosum obj1 = new Twosum();
 		
 		int[] example = {0,2,3,4,8,4};
 		int targetNum = 6;
