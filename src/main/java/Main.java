@@ -2,13 +2,15 @@
 public class Main {
 	public static void main(String[] args) {
 
-		int[] cases = {121, -121, 10};
+		String[] s = {"III", "LVIII", "MCMXCIV"};
 		
-		Ispalidrome obj1 = new Ispalidrome();
+		RomanToInteger obj1 = new RomanToInteger();
 		
-		for (int i=0; i < cases.length; i++) {
+		
+		
+		for (int i=0; i < s.length; i++) {
 			
-			boolean result = obj1.isPalidrome(cases[i]);
+			int result = obj1.Calculate(s[i]);
 			System.out.println(result);
 			
 		}

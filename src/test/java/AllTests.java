@@ -3,7 +3,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 // add
 @RunWith(Suite.class)
-@SuiteClasses({ TwoSumUnit.class, TwoSumUnit2.class, IspalidromeTest.class })
+@SuiteClasses({ TwoSumUnit.class, TwoSumUnit2.class, IspalidromeTest.class, RomanToIntegerTest.class })
 public class AllTests {
 
 }
